@@ -1,0 +1,126 @@
+@view-transition {
+    navigation: auto;
+}
+::view-transition-group(root) {
+    animation-duration: 2s;
+}
+::view-transition-old(root) {
+    animation: none;
+}
+::view-transition-new(root) {
+    animation-name: splash;
+    animation-timing-function: ease-in-out;
+    animation-duration: inherit;
+}
+@keyframes splash {
+    0% {
+        clip-path: circle(0px at 50% 50%);
+        clip-path: shape(
+            from calc(50% - 5vmax) calc(50% - 5vmax),
+            move by 8.26vmax 4.97vmax,
+            smooth by 1.40vmax -0.44vmax with 0.95vmax -0.01vmax,
+            curve by 0.31vmax -1.04vmax with 0.45vmax -0.43vmax / 0.43vmax -0.73vmax,
+            smooth by -0.55vmax -0.36vmax with -0.55vmax -0.36vmax,
+            smooth by 0.07vmax -0.66vmax with 0.25vmax -0.28vmax,
+            smooth by -1.19vmax -0.24vmax with -0.76vmax -0.50vmax,
+            smooth by -1.09vmax 0.89vmax with -1.09vmax 0.89vmax,
+            smooth by 0.77vmax -1.35vmax with 0.63vmax -0.76vmax,
+            smooth by -0.39vmax -1.10vmax with 0vmax -0.89vmax,
+            smooth by -0.73vmax 0.18vmax with -0.73vmax 0.18vmax,
+            smooth by -0.46vmax -0.77vmax with 0.01vmax -0.58vmax,
+            smooth by -0.99vmax 0.65vmax with -0.88vmax 0.44vmax,
+            curve by -0.44vmax 1.21vmax with -0.10vmax 0.17vmax / -0.44vmax 1.21vmax,
+            smooth by -0.51vmax -1.40vmax with -0.17vmax -0.89vmax,
+            curve by -1.03vmax -0.23vmax with -0.30vmax -0.45vmax / -0.76vmax -0.51vmax,
+            smooth by -0.20vmax 0.62vmax with -0.20vmax 0.62vmax,
+            smooth by -0.80vmax 0.01vmax with -0.42vmax -0.25vmax,
+            curve by -0.31vmax 0.73vmax with -0.27vmax 0.18vmax / -0.35vmax 0.44vmax,
+            curve by 0.87vmax 1.42vmax with 0.07vmax 0.49vmax / 0.87vmax 1.42vmax,
+            smooth by -1.18vmax -0.72vmax with -0.67vmax -0.60vmax,
+            curve by -0.97vmax 0.39vmax with -0.53vmax -0.13vmax / -0.88vmax 0.14vmax,
+            smooth by 0.18vmax 0.69vmax with 0.18vmax 0.69vmax,
+            smooth by -0.72vmax 0.62vmax with -0.67vmax 0.08vmax,
+            smooth by 0.63vmax 1.02vmax with 0.30vmax 0.90vmax,
+            smooth by 1.32vmax 0.18vmax with 1.32vmax 0.18vmax,
+            smooth by -1.51vmax 0.60vmax with -1.12vmax 0.26vmax,
+            curve by -0.14vmax 0.91vmax with -0.39vmax 0.34vmax / -0.34vmax 0.66vmax,
+            curve by 0.51vmax 0.20vmax with 0.18vmax 0.23vmax / 0.51vmax 0.20vmax,
+            smooth by -0.05vmax 0.76vmax with -0.27vmax 0.44vmax,
+            smooth by 1.13vmax 0.27vmax with 0.61vmax 0.47vmax,
+            curve by 1.20vmax -0.76vmax with 0.51vmax -0.19vmax / 1.20vmax -0.76vmax,
+            smooth by -0.74vmax 1.78vmax with -0.83vmax 1.17vmax,
+            curve by 0.72vmax 0.76vmax with 0.09vmax 0.61vmax / 0.45vmax 0.76vmax,
+            curve by 0.61vmax -0.40vmax with 0.29vmax -0.03vmax / 0.61vmax -0.40vmax,
+            smooth by 0.44vmax 0.63vmax with 0.06vmax 0.55vmax,
+            smooth by 0.83vmax -0.63vmax with 0.63vmax -0.28vmax,
+            smooth by 0.28vmax -1.19vmax with 0.28vmax -1.19vmax,
+            smooth by 0.46vmax 1.56vmax with 0vmax 1.12vmax,
+            smooth by 1.00vmax 0.15vmax with 0.75vmax 0.36vmax,
+            curve by 0.25vmax -0.60vmax with 0.25vmax -0.21vmax / 0.25vmax -0.60vmax,
+            smooth by 0.86vmax -0.01vmax with 0.43vmax 0.35vmax,
+            smooth by 0.03vmax -1.14vmax with 0.16vmax -0.91vmax,
+            smooth by -0.60vmax -0.75vmax with -0.60vmax -0.75vmax,
+            smooth by 1.39vmax 0.53vmax with 0.95vmax 0.55vmax,
+            smooth by 0.75vmax -0.50vmax with 0.67vmax -0.24vmax,
+            curve by -0.20vmax -0.65vmax with 0.07vmax -0.25vmax / -0.20vmax -0.65vmax,
+            smooth by 0.53vmax -0.45vmax with 0.35vmax -0.05vmax,
+            smooth by -0.56vmax -1.02vmax with -0.25vmax -0.86vmax,
+            curve by -1.18vmax -0.32vmax with -0.30vmax -0.16vmax / -1.18vmax -0.32vmax
+        );
+    }
+    100% {
+        clip-path: circle(100vmax at 50% 50%);
+        clip-path: shape(
+            from calc(50% - 100vmax) calc(50% - 100vmax),
+            move by 165.18vmax 99.47vmax,
+            smooth by 27.96vmax -8.73vmax with 18.91vmax -0.18vmax,
+            curve by 6.17vmax -20.89vmax with 9.04vmax -8.56vmax / 8.63vmax -14.67vmax,
+            smooth by -10.94vmax -7.14vmax with -10.94vmax -7.14vmax,
+            smooth by 1.47vmax -13.26vmax with 5.09vmax -5.53vmax,
+            smooth by -23.85vmax -4.86vmax with -15.13vmax -10.07vmax,
+            smooth by -21.82vmax 17.79vmax with -21.82vmax 17.79vmax,
+            smooth by 15.41vmax -27.03vmax with 12.60vmax -15.10vmax,
+            smooth by -7.73vmax -21.98vmax with 0vmax -17.79vmax,
+            smooth by -14.64vmax 3.52vmax with -14.64vmax 3.52vmax,
+            smooth by -9.22vmax -15.44vmax with 0.16vmax -11.59vmax,
+            smooth by -19.82vmax 13.01vmax with -17.59vmax 8.73vmax,
+            curve by -8.80vmax 24.26vmax with -1.97vmax 3.35vmax / -8.80vmax 24.26vmax,
+            smooth by -10.20vmax -28.03vmax with -3.38vmax -17.82vmax,
+            curve by -20.56vmax -4.70vmax with -6.00vmax -8.99vmax / -15.13vmax -10.24vmax,
+            smooth by -3.95vmax 12.42vmax with -3.95vmax 12.42vmax,
+            smooth by -15.96vmax 0.17vmax with -8.39vmax -4.94vmax,
+            curve by -6.17vmax 14.52vmax with -5.34vmax 3.61vmax / -6.93vmax 8.86vmax,
+            curve by 17.36vmax 28.44vmax with 1.32vmax 9.74vmax / 17.36vmax 28.44vmax,
+            smooth by -23.68vmax -14.44vmax with -13.32vmax -11.92vmax,
+            curve by -19.40vmax 7.71vmax with -10.61vmax -2.58vmax / -17.60vmax 2.85vmax,
+            smooth by 3.62vmax 13.76vmax with 3.62vmax 13.76vmax,
+            smooth by -14.47vmax 12.41vmax with -13.33vmax 1.51vmax,
+            smooth by 12.66vmax 20.31vmax with 6.09vmax 17.97vmax,
+            smooth by 26.30vmax 3.70vmax with 26.30vmax 3.70vmax,
+            smooth by -30.25vmax 12.09vmax with -22.31vmax 5.13vmax,
+            curve by -2.79vmax 18.30vmax with -7.78vmax 6.82vmax / -6.86vmax 13.29vmax,
+            curve by 10.19vmax 4.03vmax with 3.67vmax 4.53vmax / 10.19vmax 4.03vmax,
+            smooth by -0.99vmax 15.10vmax with -5.42vmax 8.89vmax,
+            smooth by 22.69vmax 5.38vmax with 12.17vmax 9.39vmax,
+            curve by 24.06vmax -15.16vmax with 10.13vmax -3.87vmax / 24.06vmax -15.16vmax,
+            smooth by -14.85vmax 35.63vmax with -16.67vmax 23.38vmax,
+            curve by 14.47vmax 15.10vmax with 1.81vmax 12.24vmax / 8.94vmax 15.15vmax,
+            curve by 12.17vmax -8.06vmax with 5.75vmax -0.50vmax / 12.17vmax -8.06vmax,
+            smooth by 8.71vmax 12.59vmax with 1.16vmax 10.91vmax,
+            smooth by 16.61vmax -12.59vmax with 12.66vmax -5.53vmax,
+            smooth by 5.59vmax -23.83vmax with 5.59vmax -23.83vmax,
+            smooth by 9.20vmax 31.21vmax with 0vmax 22.48vmax,
+            smooth by 20.05vmax 3.02vmax with 15.09vmax 7.11vmax,
+            curve by 4.93vmax -12.09vmax with 5.09vmax -4.20vmax / 4.93vmax -12.09vmax,
+            smooth by 17.26vmax -0.17vmax with 8.55vmax 7.06vmax,
+            smooth by 0.65vmax -22.82vmax with 3.12vmax -18.30vmax,
+            smooth by -12.00vmax -14.94vmax with -12.00vmax -14.94vmax,
+            smooth by 27.79vmax 10.57vmax with 19.07vmax 11.07vmax,
+            smooth by 14.96vmax -10.07vmax with 13.48vmax -4.86vmax,
+            curve by -3.95vmax -12.92vmax with 1.41vmax -4.97vmax / -3.95vmax -12.92vmax,
+            smooth by 10.52vmax -9.07vmax with 6.90vmax -1.01vmax,
+            smooth by -11.18vmax -20.47vmax with -5.09vmax -17.29vmax,
+            curve by -23.64vmax -6.37vmax with -6.04vmax -3.18vmax / -23.64vmax -6.37vmax
+        );
+    }
+}

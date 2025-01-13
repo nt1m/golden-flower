@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+
+:root {
+    --page-spacing: calc(.75 * 49px);
+    --theme-color: #bf8900;
+    --theme-horizontal-gradient: linear-gradient(to right,
+        lch(from var(--theme-color) calc(l + 10) c h),
+        var(--theme-color) 30%,
+        lch(from var(--theme-color) calc(l - 10) c h)
+    );
+    --theme-vertical-gradient: linear-gradient(to bottom,
+        lch(from var(--theme-color) calc(l + 20) c h),
+        lch(from var(--theme-color) calc(l - 10) c h)
+    );
+}
+* {
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+}
+body {
+    background-image: url(./img/wallpaper.png);
+    background-repeat: no-repeat;
+    background-color: black;
+    background-size: cover;
+    font-family: system-ui, Noto Sans JP;
+    padding-block: 10px;
+    font-size: 14.5px;
+    align-content: center;
+}
+main {
+    align-self: center;
+    background-color: white;
+    color: var(--theme-color);
+    border: 3px solid transparent;
+    background-image: linear-gradient(white, white), var(--theme-vertical-gradient);
+    background-clip: border-box, border-area;
+    background-origin: content-box, border-box;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 700px;
+    overflow: auto;
+    width: 100%;
+    margin: auto;
+    max-height: 100%;
+    display: flex;
+    scrollbar-width: none;
+}
+
+.summary-page {
+    background-image: url(./img/wallpaper2.png);
+}
+
+.button {
+    cursor: pointer;
+    border-radius: 2em;
+    border: none;
+    padding: .5em 1em;
+    background-color: var(--theme-color);
+    color: white;
+    font: inherit;
+    font-weight: bold;
+    text-decoration: none;
+
+    ruby {
+        rt {
+            font-size: .75em;
+        }
+        ruby-align: start;
+    }
+}
+
+.button:hover {
+    background-color: color-mix(in srgb, black 7%, var(--theme-color));
+}
+
+.button:hover:active {
+    background-color: color-mix(in srgb, black 15%, var(--theme-color));
+}
+
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1em;
+    padding-bottom: var(--page-spacing);
+
+    .spacer {
+        flex: 1;
+    }
+    ruby {
+        ruby-align: start;
+        ruby-overhang: none;
+        rt {
+            font-size: .8em;
+        }
+    }
+
+    #tel {
+        flex: 1;
+    }
+
+    input:not([type=color]) {
+        color: inherit;
+        font: inherit;
+        border: none;
+        &:read-write {
+            border-bottom: 1px solid;
+        }
+
+        &[type=tel] {
+            min-width: 12ch;
+            max-width: 100%;
+        }
+
+        &[type=number] {
+            width: 5ch;
+        }
+    }
+
+    #napkin-color {
+        input {
+            width: 2ic;
+            height: 2ic;
+            display: inline-block;
+            padding: 0;
+            color: inherit;
+        }
+    }
+}
+form {
+    flex: 1;
+    padding-block: var(--page-spacing);
+    min-width: 0;
+}
+aside {
+    font-size: 40px;
+    margin: var(--page-spacing);
+    text-box: trim-both cap text;
+    white-space: nowrap;
+
+    &[lang=en] {
+        text-transform: uppercase;
+        writing-mode: vertical-lr;
+        writing-mode: sideways-lr;
+        word-spacing: 5px;
+        text-align: end;
+        span {
+            margin-bottom: var(--page-spacing)
+        }
+    }
+    &[lang=ja] {
+        writing-mode: vertical-lr;
+    }
+}
+p {
+    line-height: 1.25lh;
+}
+table {
+    width: 100%;
+    border: 1px solid;
+    border-collapse: collapse;
+    @supports (background-clip: border-area) {
+        background-image: var(--theme-horizontal-gradient);
+        background-clip: border-area;
+        border-color: transparent;
+    }
+    margin-bottom: var(--page-spacing);
+    td.collapsed {
+        white-space: nowrap;
+        width: 1px;
+    }
+    th,
+    &.menu-table summary,
+    &.menu-table td:last-child,
+    &.summary-table td,
+    td.padded,
+    td > textarea {
+        padding: 0 1ic;
+        line-height: 1.92lh;
+    }
+    td:has(input),
+    td:has(textarea) {
+        padding: 0;
+    }
+    td > textarea {
+        width: 100%;
+        min-height: 1lh;
+        field-sizing: content;
+        margin: 0;
+        border: none;
+        font-family: inherit;
+        font-size: inherit;
+        color: inherit;
+        resize: none;
+    }
+    td > textarea::placeholder {
+        color: color-mix(in srgb, currentColor 70%, transparent);
+    }
+    th {
+        background-color: color-mix(in srgb, currentColor 10%, transparent);
+        @supports (background-clip: text) {
+            background-image: linear-gradient(color-mix(in srgb, currentColor 10%, transparent), color-mix(in srgb, currentColor 10%, transparent)),
+                var(--theme-horizontal-gradient);
+            background-clip: border-box, text;
+            -webkit-text-fill-color: transparent;
+        }
+    }
+    th, td {
+        text-align: start;
+        border-block-end: 1px solid currentColor;
+        border-inline-end: 1px solid;
+    }
+    tfoot {
+        font-weight: bold;
+    }
+    input {
+        width: 5ch;
+        height: 2lh;
+        padding-inline-start: 1ic;
+        border: none;
+        display: block;
+        font: inherit;
+        color: inherit;
+    }
+    details {
+        width: 100%;
+        -webkit-user-select: none;
+        user-select: none;
+        summary {
+            align-items: center;
+            list-style: "📷" inside;
+            cursor: pointer;
+            span {
+                margin-left: 1ic;
+            }
+            span[lang=ja] {
+                display: inline-block;
+                width: 3ic;
+            }
+        }
+        &::details-content {
+            box-sizing: border-box;
+            height: 0;
+            transition: height .3s, content-visibility .3s allow-discrete;
+            overflow: hidden;
+            margin-inline-start: 1ic;
+        }
+        &[open]::details-content {
+            height: 200px;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            margin-bottom: .5em;
+            object-fit: contain;
+            object-position: left;
+        }
+    }
+}

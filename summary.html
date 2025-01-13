@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Golden Flower 🌼</title>
+    <link rel="stylesheet" href="view-transition.css" blocking="render">
+    <link rel="stylesheet" href="style.css" blocking="render">
+</head>
+<body class="summary-page">
+    <main>
+        <aside lang="en">
+            The Golden Flower <span>🌼</span>
+        </aside>
+        <form>
+            <div class="toolbar">
+                <label id="tel">
+                    <ruby>Tel #<rp>(</rp><rt>電番</rt><rp>)</rp></ruby>
+                    <input type="tel" name="tel" readonly>
+                </label>
+                <label id="table">
+                    <ruby>Table #<rp>(</rp><rt>表番号</rt><rp>)</rp></ruby>
+                    <input type="number" min="0" name="table" readonly>
+                </label>
+                <label id="napkin-color">
+                    <ruby>Napkin color<rp>(</rp><rt>ナプキンの色</rt><rp>)</rp></ruby>
+                    <input type="color" colorspace="display-p3" value="#fff" name="napkin" disabled>
+                </label>
+            </div>
+            <p>Thank you for dining with us!
+            <br>一緒にお食事してくださってありがとうございました！</p>
+            <table class="summary-table" id="summary">
+                <thead>
+                    <th>#</th>
+                    <th>Item　項目</th>
+                    <th></th>
+                </thead>
+                <tbody></tbody>
+                <tfoot></tfoot>
+            </table>
+            <table id="requests" hidden>
+                <thead>
+                    <th>Notes　注釈</th>
+                </thead>
+                <tr>
+                    <td class="padded"></td>
+                </tr>
+            </table>
+            <button class="button" type="button">
+                Get notified about future deals!
+            </button>
+            <button class="button" type="button">
+                Text me receipt
+            </button>
+        </form>
+        <aside lang="ja">
+            黄金の花
+        </aside>
+    </main>
+    <script blocking="render">
+        function $(selector) {
+            return document.querySelector(selector);
+        }
+        let params = new URLSearchParams(location.search);
+        $("[name=tel]").value = params.get("tel") ?? "";
+        $("[name=table]").value = params.get("table") ?? "";
+        $("[name=napkin]").value = params.get("napkin") ?? "";
+        $("#requests").hidden = !params.get("requests");
+        $("#requests td").textContent = params.get("requests") ?? "";
+
+        let menu = {
+            "gyoza": { name: "Gyoza　餃子", price: "10"},
+            "karaage": { name: "Karaage　唐揚げ", price: "12"},
+            "edamame": { name: "Edamame　枝豆", price: "8"},
+            "hiyayakko": { name: "Hiyayakko　冷奴", price: "8"},
+            "gyudon": { name: "Gyudon (Beef)　牛丼", price: "16"},
+            "unadon": { name: "Unadon (Eel)　鰻丼", price: "18"},
+            "katsudon": { name: "Katsudon (Pork cutlet)　カツ丼", price: "16"},
+            "tekkadon": { name: "Tekkadon (Tuna)　鉄火丼", price: "18"},
+        };
+
+        let total = 0;
+        for (let item in menu) {
+            if (!params.has(item) || !params.get(item) || params.get(item) == 0)
+                continue;
+            const tr = document.createElement("tr");
+            const quantityCell = document.createElement("td");
+            quantityCell.className = "collapsed";
+            quantityCell.textContent = params.get(item);
+
+            const nameCell = document.createElement("td");
+            nameCell.textContent = menu[item].name;
+
+            const priceCell = document.createElement("td");
+            const price = params.get(item) * menu[item].price;
+            priceCell.textContent = "$" + price;
+            tr.append(quantityCell, nameCell, priceCell);
+            $("#summary tbody").append(tr);
+
+            total += price;
+        }
+
+        const taxRow = document.createElement("tr");
+        const taxLabel = document.createElement("td");
+        taxLabel.colSpan = 2;
+        taxLabel.textContent = "Tax　消費税";
+        const taxCell = document.createElement("td");
+        const tax = parseFloat((total * 0.0725).toFixed(2));
+        taxCell.textContent = "$" + tax;
+        taxRow.append(taxLabel, taxCell);
+        $("#summary tbody").append(taxRow);
+        total += tax;
+
+        if (params.get("tip")) {
+            const tipRow = document.createElement("tr");
+            const tipLabel = document.createElement("td");
+            tipLabel.colSpan = 2;
+            tipLabel.textContent = "Tip　チップ";
+            const tipCell = document.createElement("td");
+            tipCell.textContent = "$" + params.get("tip");
+            tipRow.append(tipLabel, tipCell);
+            $("#summary tbody").append(tipRow);
+            total += parseInt(params.get("tip"));
+        }
+
+        const footerRow = document.createElement("tr");
+        const footerLabel = document.createElement("td");
+        footerLabel.colSpan = 2;
+        footerLabel.textContent = "Total　合計";
+        const totalCell = document.createElement("td");
+        totalCell.textContent = "$" + total.toFixed(2);
+        footerRow.append(footerLabel, totalCell);
+        $("#summary tfoot").append(footerRow);
+    </script>
+</body>
+</html>

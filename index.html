@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The Golden Flower 🌼</title>
+    <link rel="stylesheet" href="view-transition.css" blocking="render">
+    <link rel="stylesheet" href="style.css" blocking="render">
+</head>
+<body>
+    <main>
+        <aside lang="en">
+            The Golden Flower <span>🌼</span>
+        </aside>
+        <form action="./summary.html">
+            <div class="toolbar">
+                <label id="tel">
+                    <ruby>Tel #<rp>(</rp><rt>電番</rt><rp>)</rp></ruby>
+                    <input type="tel" name="tel" required>
+                </label>
+                <label id="table">
+                    <ruby>Table #<rp>(</rp><rt>表番号</rt><rp>)</rp></ruby>
+                    <input type="number" min="0" max="20" name="table" required>
+                </label>
+                <label id="napkin-color">
+                    <ruby>Napkin color<rp>(</rp><rt>ナプキンの色</rt><rp>)</rp></ruby>
+                    <input type="color" colorspace="display-p3" value="#fff" name="napkin">
+                </label>
+            </div>
+            <table class="menu-table">
+                <thead>
+                    <th colspan="3">Starters　スターター</th>
+                </thead>
+                <tr>
+                    <td class="collapsed" valign="top"><input type="number" min="0" max="20" name="gyoza"></td>
+                    <td>
+                        <details name="menu-item">
+                            <summary>
+                                <span lang="en">Gyoza</span>
+                                <span lang="ja">餃子</span>
+                            </summary>
+                            <img src="./img/food/gyoza.jpg">
+                        </details>
+                    </td>
+                    <td class="collapsed" valign="top">$10</td>
+                </tr>
+                <tr>
+                    <td class="collapsed" valign="top"><input type="number" min="0" max="20" name="karaage"></td>
+                    <td>
+                        <details name="menu-item">
+                            <summary>
+                                <span lang="en">Karaage</span>
+                                <span lang="ja">唐揚げ</span>
+                            </summary>
+                            <img src="./img/food/karaage.jpg">
+                        </details>
+                    </td>
+                    <td class="collapsed" valign="top">$12</td>
+                </tr>
+                <tr>
+                    <td class="collapsed" valign="top"><input type="number" min="0" max="20" name="edamame"></td>
+                    <td>
+                        <details name="menu-item">
+                            <summary>
+                                <span lang="en">Edamame</span>
+                                <span lang="ja">枝豆</span>
+                            </summary>
+                            <img src="./img/food/edamame.jpg">
+                        </details>
+                    </td>
+                    <td class="collapsed" valign="top">$8</td>
+                </tr>
+                <tr>
+                    <td class="collapsed" valign="top"><input type="number" min="0" max="20" name="hiyayakko"></td>
+                    <td>
+                        <details name="menu-item">
+                            <summary>
+                                <span lang="en">Hiyayakko</span>
+                                <span lang="ja">冷奴</span>
+                            </summary>
+                            <img src="./img/food/hiyayakko.jpg">
+                        </details>
+                    </td>
+                    <td class="collapsed" valign="top">$8</td>
+                </tr>
+            </table>
+
+            <table class="menu-table">
+                <thead>
+                    <th colspan="3">Rice bowls　丼</th>
+                </thead>
+                <tr>
+                    <td class="collapsed" valign="top"><input type="number" min="0" max="20" name="gyudon"></td>
+                    <td>
+                        <details name="menu-item">
+                            <summary>
+                                <span lang="en">Gyudon (Beef)</span>
+                                <span lang="ja">牛丼</span>
+                            </summary>
+                            <img src="./img/food/gyudon.jpg">
+                        </details>
+                    </td>
+                    <td class="collapsed" valign="top">$16</td>
+                </tr>
+                <tr>
+                    <td class="collapsed" valign="top"><input type="number" min="0" max="20" name="unadon"></td>
+                    <td>
+                        <details name="menu-item">
+                            <summary>
+                                <span lang="en">Unadon (Eel)</span>
+                                <span lang="ja">鰻丼</span>
+                            </summary>
+                            <img src="./img/food/unadon.jpg">
+                        </details>
+                    </td>
+                    <td class="collapsed" valign="top">$18</td>
+                </tr>
+                <tr>
+                    <td class="collapsed" valign="top"><input type="number" min="0" max="20" name="katsudon"></td>
+                    <td>
+                        <details name="menu-item">
+                            <summary>
+                                <span lang="en">Katsudon (Pork cutlet)</span>
+                                <span lang="ja">カツ丼</span>
+                            </summary>
+                            <img src="./img/food/katsudon.jpg">
+                        </details>
+                    </td>
+                    <td class="collapsed" valign="top">$16</td>
+                </tr>
+                <tr>
+                    <td class="collapsed" valign="top"><input type="number" min="0" max="20" name="tekkadon"></td>
+                    <td>
+                        <details name="menu-item">
+                            <summary>
+                                <span lang="en">Tekkadon (Tuna)</span>
+                                <span lang="ja">鉄火丼</span>
+                            </summary>
+                            <img src="./img/food/tekkadon.jpg">
+                        </details>
+                    </td>
+                    <td class="collapsed" valign="top">$18</td>
+                </tr>
+            </table>
+            <table>
+                <thead>
+                    <th>Notes　注釈</th>
+                </thead>
+                <tr>
+                    <td>
+                        <textarea placeholder="Write down your special requests!" name="requests"></textarea>
+                    </td>
+                </tr>
+            </table>
+            <footer class="toolbar">
+                <label id="tip">
+                    <ruby>Tip<rp>(</rp><rt>チップ</rt><rp>)</rp></ruby>
+                    　$<input type="number" min="0" name="tip">
+                </label>
+                <div class="spacer"></div>
+                <button class="button" style="float: right">Order Now</button>
+            </footer>
+        </form>
+        <aside lang="ja">
+            黄金の花
+        </aside>
+    </main>
+</body>
+</html>
