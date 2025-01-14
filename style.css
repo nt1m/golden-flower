@@ -165,7 +165,7 @@ form {
 aside {
     font-size: 40px;
     margin: var(--page-spacing);
-    text-box: trim-both cap text;
+    text-box: trim-both cap alphabetic;
     white-space: nowrap;
 
     &[lang=en] {
