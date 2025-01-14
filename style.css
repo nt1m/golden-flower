@@ -251,7 +251,8 @@ table {
     input {
         width: 5ch;
         height: 2lh;
-        padding-inline-start: 1ic;
+        padding-inline-start: .5ic;
+        text-align: center;
         border: none;
         display: block;
         font: inherit;
