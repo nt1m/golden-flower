@@ -122,6 +122,8 @@ header {
     input:not([type=color]) {
         color: inherit;
         font: inherit;
+        appearance: none;
+        background: none;
         border: none;
         border-radius: 0;
         &:read-write {
@@ -216,7 +218,10 @@ table {
         min-height: 1lh;
         field-sizing: content;
         margin: 0;
+        appearance: none;
+        background: none;
         border: none;
+        border-radius: 0;
         font-family: inherit;
         font-size: inherit;
         color: inherit;
