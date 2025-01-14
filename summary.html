@@ -96,6 +96,7 @@
 
             const priceCell = document.createElement("td");
             const price = params.get(item) * menu[item].price;
+            priceCell.className = "collapsed";
             priceCell.textContent = "$" + price;
             tr.append(quantityCell, nameCell, priceCell);
             $("#summary tbody").append(tr);
@@ -109,6 +110,7 @@
         taxLabel.textContent = "Tax　消費税";
         const taxCell = document.createElement("td");
         const tax = parseFloat((total * 0.0725).toFixed(2));
+        taxCell.className = "collapsed";
         taxCell.textContent = "$" + tax;
         taxRow.append(taxLabel, taxCell);
         $("#summary tbody").append(taxRow);
@@ -120,6 +122,7 @@
             tipLabel.colSpan = 2;
             tipLabel.textContent = "Tip　チップ";
             const tipCell = document.createElement("td");
+            tipCell.className = "collapsed";
             tipCell.textContent = "$" + params.get("tip");
             tipRow.append(tipLabel, tipCell);
             $("#summary tbody").append(tipRow);
@@ -131,6 +134,7 @@
         footerLabel.colSpan = 2;
         footerLabel.textContent = "Total　合計";
         const totalCell = document.createElement("td");
+        totalCell.className = "collapsed";
         totalCell.textContent = "$" + total.toFixed(2);
         footerRow.append(footerLabel, totalCell);
         $("#summary tfoot").append(footerRow);
