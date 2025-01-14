@@ -152,7 +152,8 @@ aside {
         text-transform: uppercase;
         writing-mode: vertical-lr;
         writing-mode: sideways-lr;
-        word-spacing: 5px;
+        word-spacing: 10px;
+        letter-spacing: 1px;
         text-align: end;
         span {
             margin-bottom: var(--page-spacing)
