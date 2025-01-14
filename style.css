@@ -37,7 +37,7 @@ main {
     border: 3px solid transparent;
     background-image: linear-gradient(white, white), var(--theme-vertical-gradient);
     background-clip: border-box, border-area;
-    background-origin: content-box, border-box;
+    background-origin: padding-box, border-box;
     background-repeat: no-repeat;
     background-size: cover;
     max-width: 700px;
@@ -80,6 +80,23 @@ main {
     background-color: color-mix(in srgb, black 15%, var(--theme-color));
 }
 
+header {
+    display: none;
+    text-align: center;
+    margin-bottom: var(--page-spacing);
+    h1 {
+        font-size: 1.65em;
+        text-transform: uppercase;
+        margin: 0;
+        word-spacing: 10px;
+        letter-spacing: 1px;
+        font-weight: 600;
+        ruby rt {
+            font-size: 0.8em;
+        }
+    }
+}
+
 .toolbar {
     display: flex;
     flex-wrap: wrap;
@@ -106,6 +123,7 @@ main {
         color: inherit;
         font: inherit;
         border: none;
+        border-radius: 0;
         &:read-write {
             border-bottom: 1px solid;
         }
@@ -271,4 +289,19 @@ table {
 
 #requests td {
     white-space: pre;
+}
+
+@media (max-width: 600px) {
+    :root {
+        --page-spacing: calc(.75 * 30px);
+    }
+    header {
+        display: block;
+    }
+    aside {
+        display: none;
+    }
+    main {
+        padding: 1em;
+    }
 }
