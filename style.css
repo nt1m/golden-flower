@@ -171,12 +171,14 @@ aside {
     &[lang=en] {
         text-transform: uppercase;
         writing-mode: vertical-lr;
-        writing-mode: sideways-lr;
         word-spacing: 10px;
         letter-spacing: 1px;
         text-align: end;
-        span {
-            margin-bottom: var(--page-spacing)
+        @supports (writing-mode: sideways-lr) {
+            writing-mode: sideways-lr;
+        }
+        @supports not (writing-mode: sideways-lr) {
+            transform: scale(-1);
         }
     }
     &[lang=ja] {
