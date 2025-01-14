@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
 
 :root {
-    --page-spacing: calc(.75 * 49px);
+    --page-spacing: 40px;
     --theme-color: #bf8900;
     --theme-horizontal-gradient: linear-gradient(to right,
         lch(from var(--theme-color) calc(l + 10) c h),
@@ -26,7 +26,7 @@ body {
     background-color: black;
     background-size: cover;
     font-family: system-ui, Noto Sans JP;
-    padding-block: 10px;
+    padding-block: 8px;
     font-size: 14.5px;
     align-content: center;
 }
@@ -208,8 +208,7 @@ table {
     &.summary-table td,
     td.padded,
     td > textarea {
-        padding: 0 1ic;
-        line-height: 1.9lh;
+        padding: .5em 1ic;
     }
     td:has(input),
     td:has(textarea) {
