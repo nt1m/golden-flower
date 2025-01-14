@@ -118,6 +118,13 @@ main {
         &[type=number] {
             width: 5ch;
         }
+
+        &[type=number][readonly]::-webkit-inner-spin-button {
+            display: none;
+        }
+        &[type=number][readonly]::-moz-number-spin-box {
+            display: none;
+        }
     }
 
     #napkin-color {
@@ -162,12 +169,12 @@ table {
     width: 100%;
     border: 1px solid;
     border-collapse: collapse;
+    margin-bottom: var(--page-spacing);
     @supports (background-clip: border-area) {
         background-image: var(--theme-horizontal-gradient);
         background-clip: border-area;
         border-color: transparent;
     }
-    margin-bottom: var(--page-spacing);
     td.collapsed {
         white-space: nowrap;
         width: 1px;
@@ -179,7 +186,7 @@ table {
     td.padded,
     td > textarea {
         padding: 0 1ic;
-        line-height: 1.92lh;
+        line-height: 1.9lh;
     }
     td:has(input),
     td:has(textarea) {
@@ -259,4 +266,8 @@ table {
             object-position: left;
         }
     }
+}
+
+#requests td {
+    white-space: pre;
 }
