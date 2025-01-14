@@ -272,6 +272,13 @@ table {
                 width: 3ic;
             }
         }
+        img {
+            width: 100%;
+            height: 100%;
+            margin-bottom: .5em;
+            object-fit: contain;
+            object-position: left;
+        }
         &::details-content {
             box-sizing: border-box;
             height: 0;
@@ -281,13 +288,6 @@ table {
         }
         &[open]::details-content {
             height: 200px;
-        }
-        img {
-            width: 100%;
-            height: 100%;
-            margin-bottom: .5em;
-            object-fit: contain;
-            object-position: left;
         }
     }
 }
