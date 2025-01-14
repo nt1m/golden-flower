@@ -102,7 +102,10 @@ header {
     flex-wrap: wrap;
     align-items: center;
     gap: 1em;
-    padding-bottom: var(--page-spacing);
+
+    &:not(:last-child) {
+        padding-bottom: var(--page-spacing);
+    }
 
     .spacer {
         flex: 1;
