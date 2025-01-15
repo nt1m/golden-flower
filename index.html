@@ -6,24 +6,25 @@
     <title>The Golden Flower 🌼</title>
     <link rel="stylesheet" href="view-transition.css" blocking="render">
     <link rel="stylesheet" href="style.css" blocking="render">
+    <link rel="preload" href="./img/wallpaper2.png">
 </head>
 <body>
     <main>
         <aside lang="en">
             The Golden Flower　<span>🌼</span>
         </aside>
-        <form action="./summary.html">
+        <form action="./review.html">
             <header>
                 <h1><span>🌼</span> <ruby><rb>The Golden Flower</rb><rt>黄金の花</rt></ruby></h1>
             </header>
             <div class="toolbar">
                 <label id="tel">
                     <ruby>Tel #<rp>(</rp><rt>電話番号</rt><rp>)</rp></ruby>
-                    <input type="tel" name="tel" required>
+                    <input type="tel" name="tel" required value="(408) 996-1010">
                 </label>
                 <label id="table">
                     <ruby>Table #<rp>(</rp><rt>机番号</rt><rp>)</rp></ruby>
-                    <input type="number" min="0" max="20" name="table" required>
+                    <input type="number" min="0" max="20" name="table" required value="2">
                 </label>
                 <label id="napkin-color">
                     <ruby>Napkin color<rp>(</rp><rt>ナプキンの色</rt><rp>)</rp></ruby>
@@ -161,7 +162,7 @@
                     　$<input type="number" min="0" name="tip">
                 </label>
                 <div class="spacer"></div>
-                <button class="button" style="float: right">Order Now</button>
+                <button class="button" style="float: right">Order now</button>
             </footer>
         </form>
         <aside lang="ja">

@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html class="summary-page">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>The Golden Flower 🌼</title>
     <link rel="stylesheet" href="view-transition.css" blocking="render">
     <link rel="stylesheet" href="style.css" blocking="render">
+    <link rel="preload" href="./img/wallpaper2.png">
 </head>
-<body class="summary-page">
+<body>
     <main>
         <aside lang="en">
             The Golden Flower <span>🌼</span>
@@ -16,6 +17,7 @@
             <header>
                 <h1><span>🌼</span> <ruby><rb>The Golden Flower</rb><rt>黄金の花</rt></ruby></h1>
             </header>
+            <h1>Review your order</h1>
             <div class="toolbar">
                 <label id="tel">
                     <ruby>Tel #<rp>(</rp><rt>電話番号</rt><rp>)</rp></ruby>
@@ -30,8 +32,6 @@
                     <input type="color" colorspace="display-p3" value="#fff" name="napkin" disabled>
                 </label>
             </div>
-            <p>Thank you for dining with us!
-            <br>当店をお選びいただきありがとうございます！</p>
             <table class="summary-table" id="summary">
                 <thead>
                     <th>#</th>
@@ -49,12 +49,14 @@
                     <td class="padded"></td>
                 </tr>
             </table>
-            <button class="button" type="button">
-                Get notified about future deals!
-            </button>
-            <button class="button" type="button">
-                Text me receipt
-            </button>
+            <div>
+                <button class="button" type="button" style="float: left;" onclick="window.history.back()">
+                    Edit my order
+                </button>
+                <a href="thanks.html" class="button" style="float: right;" >
+                    Pay now
+                </a>
+            </div>
         </form>
         <aside lang="ja">
             黄金の花

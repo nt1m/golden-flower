@@ -2,12 +2,15 @@
     navigation: auto;
 }
 ::view-transition-group(root) {
+    animation-duration: .4s;
+}
+.thanks-page::view-transition-group(root) {
     animation-duration: 2s;
 }
-::view-transition-old(root) {
+.thanks-page::view-transition-old(root) {
     animation: none;
 }
-::view-transition-new(root) {
+.thanks-page::view-transition-new(root) {
     animation-name: splash;
     animation-timing-function: ease-in-out;
     animation-duration: inherit;
