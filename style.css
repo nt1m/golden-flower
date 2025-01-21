@@ -335,7 +335,7 @@ h1 {
     --page-spacing: 3em;
     main {
         padding: var(--page-spacing);
-        padding-bottom: calc(var(--page-spacing) * .85); /* optical alignment */
+        padding-bottom: calc(var(--page-spacing) * .9); /* optical alignment */
     }
     form {
         padding: 0;
