@@ -2,7 +2,7 @@
     navigation: auto;
 }
 ::view-transition-group(root) {
-    animation-duration: .4s;
+    animation-duration: .6s;
 }
 .thanks-page::view-transition-group(root) {
     animation-duration: 2s;
