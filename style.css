@@ -27,13 +27,11 @@ body {
     background-color: black;
     background-size: cover;
     font-family: system-ui, Noto Sans JP;
-    padding-block: 8px;
+    padding-block: 15px;
     font-size: 14px;
     font-weight: 500;
-    align-content: center;
 }
 main {
-    align-self: center;
     background-color: white;
     color: var(--theme-color);
     border: 3px solid transparent;
@@ -88,7 +86,7 @@ header {
         letter-spacing: 1px;
         font-weight: 600;
         ruby rt {
-            font-size: 0.8em;
+            font-size: .8em;
         }
     }
 }
@@ -150,15 +148,6 @@ header {
         input {
             width: 2ic;
             height: 2ic;
-            display: inline-block;
-            padding: 0;
-            color: inherit;
-            background-image: linear-gradient(-45deg, white 0 50%, lightgray 50% 100%);
-            border-radius: 2px;
-            border: 0;
-        }
-        input::-webkit-color-swatch-wrapper {
-            padding: 3px;
         }
     }
 }
@@ -229,6 +218,7 @@ table {
     td > textarea {
         width: 100%;
         min-height: 1lh;
+        height: 5lh;
         field-sizing: content;
         margin: 0;
         appearance: none;
