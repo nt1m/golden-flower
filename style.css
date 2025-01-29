@@ -51,6 +51,7 @@ main {
 
 .thanks-page body {
     background-image: url(./img/wallpaper2.png);
+    align-content: center;
 }
 
 .button {
