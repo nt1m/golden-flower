@@ -47,6 +47,7 @@ main {
     max-height: 100%;
     display: flex;
     scrollbar-width: none;
+    align-items: start;
 }
 
 .thanks-page body {
@@ -303,6 +304,10 @@ table {
 
 h1 {
     font-weight: 600;
+}
+
+.order-page main {
+    height: 100%;
 }
 
 .summary-page form > h1 {
